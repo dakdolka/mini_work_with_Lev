@@ -10,6 +10,7 @@ class SyncORM: # Класс со всеми запросами
 
     @staticmethod # Позволяет юзать метод без создания объекта класса 
     def create_tables(): # Создание всех ранее описанных таблиц в бд
+        Base.metadata.drop_all(db_helper.engine)
         Base.metadata.create_all(db_helper.engine) #* Так надо
 
     @staticmethod
@@ -32,7 +33,6 @@ class SyncORM: # Класс со всеми запросами
     @staticmethod
     def get_all_info():
         with db_helper.session_factory() as session:
-            query = select(Table.info)
-            res = session.execute(query).scalars().all()
-            print(res)
+            query = select(Table.info, Table.id)
+            res = session.execute(query).scalars().all()[-1] #получаем данные запроса в виде списка кортежей, scalars преобразует в список из всех первых значений кортежа
         return res

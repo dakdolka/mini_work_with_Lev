@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from queries.orm import SyncORM
 import uvicorn
+from pydantic import BaseModel
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -16,13 +17,16 @@ app.add_middleware(
     allow_headers=["*"],  # Разрешить любые заголовки
 )
 
+class Info(BaseModel):
+    info: str
 
-@app.get("/add/{info}")  # отлавливание всех get запросов, начинающихся с слэша
-def root(info: str, price: int):
-    print(info)
-    return SyncORM.add_info(info)
 
-@app.get("/get_all")
+@app.post("/add/")  # отлавливание всех get запросов, начинающихся с слэша
+def root(info: Info):
+    SyncORM.add_info(info.info)
+
+
+@app.get("/get_all/")
 def get_all():
     return {'ans': SyncORM.get_all_info()}
 

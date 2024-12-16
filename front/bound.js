@@ -5,16 +5,27 @@ function uppopup() {
 
 function take_info() {
     const input_elem = document.getElementById('News');
-    alert(input_elem.value);
+    return input_elem.value
 }
 
-document.getElementById('main_form').addEventListener('submit', take_info);
-
 async function get_content(){
-    console.log('345678')
-    const res = await fetch('http://127.0.0.1:8000/get_all')
-    const data = await res.json()
-    console.log(data)
+    const dannye = take_info()
+    const res = await fetch('http://127.0.0.1:8000/add/',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'info': dannye})
+            //?info=dannye
+        }
+    )
+    //добавили данные в таблицу - POST запрос, ничего не возвращает, а просто добавляет в таблицу данные
+
+    const res2 = await fetch('http://127.0.0.1:8000/get_all/')
+    const data = await res2.json()
+    //получили все данные
+
     document.getElementById('popup-content').innerHTML = Object.values(data)
 }
 
