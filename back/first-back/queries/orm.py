@@ -28,3 +28,11 @@ class SyncORM: # Класс со всеми запросами
                                     # которую получили в функции
             session.add(table) #* Закидываем обновленные данные в бд
             session.commit() #* Сохраняем и закрываем
+
+    @staticmethod
+    def get_all_info():
+        with db_helper.session_factory() as session:
+            query = select(Table.info)
+            res = session.execute(query).scalars().all()
+            print(res)
+        return res
