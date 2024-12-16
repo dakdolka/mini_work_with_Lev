@@ -86,6 +86,7 @@ fieldset {
     width: 20vw; 
     border: 5px solid rgb(100, 100, 255); 
     border-radius: 5px;
+    cursor: default;
 
     legend {
         font-family: 'News'; 
