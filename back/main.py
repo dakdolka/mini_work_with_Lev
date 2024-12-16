@@ -11,7 +11,7 @@ app = FastAPI()
 # Добавляем CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Разрешить запросы с любых источников
+    allow_origins=["https://dakdolka.github.io/mini_work_with_Lev"],  # Разрешить запросы с любых источников
     allow_credentials=True,
     allow_methods=["*"],  # Разрешить любые HTTP-методы (GET, POST и т.д.)
     allow_headers=["*"],  # Разрешить любые заголовки
