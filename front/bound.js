@@ -3,6 +3,12 @@ function uppopup() {
     // toggle - если есть - удалит, если нет - добавит, для гениев
 }
 
+function take_info() {
+    const input_elem = document.getElementById('News');
+    alert(input_elem.value);
+}
+
+document.getElementById('main_form').addEventListener('submit', take_info);
 
 async function get_content(){
     console.log('345678')

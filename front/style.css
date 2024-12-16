@@ -76,3 +76,29 @@
         }
     }
 }
+
+fieldset {
+    width: 20vw; 
+    border: 5px solid rgb(100, 100, 255); 
+    border-radius: 5px;
+
+    legend {
+        font-family: 'News'; 
+        padding: 0 5px;
+    }
+
+    label {
+        font-family: 'Courier New', Courier, monospace; 
+        font-weight: 700;
+    }
+
+    input {
+        border: 2px solid rgb(100, 100, 255); 
+        border-radius: 3px;
+
+        &:focus {
+            outline: 2px solid rgb(100, 100, 255);
+            transition: all 0.05s;
+        }
+    }
+}

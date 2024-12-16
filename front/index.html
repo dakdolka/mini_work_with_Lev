@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>With Andrew</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="btn" onclick="caller();">Ехала?</button> <!-- у кнопки по умолчанию текст по центру -->
+    <button class="btn" onclick="uppopup();">Сигма бой?</button> <!-- у кнопки по умолчанию текст по центру -->
     <div class="main_pu close">
         <div class="popup-body"> <!-- основной белый прямоугольник пон -->
             <h1 onclick="uppopup();">Х</h1>
-            <p id="popup-content"></p>
         </div>
     </div>
-<script src="bound.js"></script>
+
+    <form id="main_form" action="#" method="post">
+        <fieldset>
+            <legend>Имя</legend>
+            <label for="News">Введите</label>
+            <input id="News" type="text">
+        </fieldset>
+    </form>
+    <script src="bound.js"></script>
 </body>
 </html>
