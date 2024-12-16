@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'cave';
+    src: url('Caveat-Regular.ttf'), format('ttf');
+}
+
+.btn {
+    margin: 100px;
+    width: 20vw; /*ширина кнопки 1vw == 1% экрана */
+    height: 20vh; /* высота кнопки vh - аналогично */
+
+    border: 5px dashed rgb(195, 255, 105);
+    border-radius: 10px;
+    background-color: aliceblue;
+    background-clip: padding-box;
+
+    font-family: 'cave';
+    font-size: 5vh;
+
+    &:hover { /*псевдокласс, hover отвечает за поведение кнопки при наведении*/
+        opacity: 0.8; /*прозрачность*/ 
+        background-color: rgb(163, 218, 255); 
+
+        border: 5px solid rgb(195, 255, 105);
+
+        transition: all 0.3s; /*плавность перехода, можно как на отдельные элементы так и на все*/
+    } 
+
+    &:active { /*псевдокласс, active отвечает за поведение кнопки при нажатии*/
+        box-shadow: 0 0 15px rgb(195, 255, 105); /*смещение по Ох Оу, на сколько, какой цвет -- тень при нажатии, если бы было не внутри active - тень всегда была бы */
+    }
+}
+
+.close{
+    display: none;
+}
+
+/*для main_pu мы объявили псевдокласс not, что означает, что main_pu заработает, когда элемент не будет иметь класса close*/
+
+.main_pu:not(.close) {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.3); /*прозрачный цвет*/
+    position: fixed; /*фиксированная позиция => всегда в том же месте на экране*/ 
+    top: 0; /*выравнивание по верху несмотря на другие элементы*/
+}
+
+.popup-body {
+    width: 30vw;
+    height: 90vh;
+    background-color: aliceblue;
+    border-radius: 10px;
+    position: relative; /*т.к. релатив, то все элементы внутри будут зависеть и ориентриоваться от него*/
+    top: 5vh;
+    left: 35vw;
+    /*т.к. внутри позиции fixed, то все элементы будут зависеть от него типа*/
+    
+    h1{
+        padding: 0 4px;
+        position: absolute;
+        left: 90%;
+        top: 2%;
+
+        cursor: default; /*не будет курсор меняться на текст*/
+        border: 2px dotted rgb(255, 105, 105);
+
+        &:hover{
+            border: 2px solid rgb(255, 105, 105);
+            background-color: rgb(255, 164, 164);
+
+            transition: all 0.3s;
+        }
+    }
+}
