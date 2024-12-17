@@ -23,7 +23,7 @@
     background-clip: padding-box;
 
     font-family: var(--main-font);
-    font-size: 5vh; 
+    font-size: 3vw; 
 
     &:hover { /*псевдокласс, hover отвечает за поведение кнопки при наведении*/
         opacity: 0.8; /*прозрачность*/ 
