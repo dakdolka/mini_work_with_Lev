@@ -1,3 +1,9 @@
+*:not(fieldset) {
+    margin: 0;
+    padding: 0;
+}   
+
+
 @font-face {
     font-family: 'cave';
     src: url('Caveat-Regular.ttf'), format('ttf');
@@ -72,6 +78,7 @@
 
         cursor: default; /*не будет курсор меняться на текст*/
         border: 2px dotted rgb(255, 105, 105);
+        border-radius: 3px;
 
         &:hover{
             border: 2px solid rgb(255, 105, 105);
@@ -83,6 +90,7 @@
 }
 
 fieldset {
+    margin: 5px 10px;
     width: 20vw; 
     border: 5px solid rgb(100, 100, 255); 
     border-radius: 5px;
@@ -101,9 +109,12 @@ fieldset {
     input {
         border: 2px solid rgb(100, 100, 255); 
         border-radius: 3px;
+        padding-left: 5px;
 
         &:focus {
-            outline: 2px solid rgb(100, 100, 255);
+            border: 3px solid rgb(100, 100, 255);
+            border-radius: 4px;
+            outline: none;
             transition: all 0.05s;
         }
     }
