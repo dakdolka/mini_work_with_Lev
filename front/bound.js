@@ -33,3 +33,8 @@ async function caller() {
     uppopup()
     await get_content()
 }
+
+const form = document.getElementById('main_form')
+
+const elems = document.getElementsByAttribute('data-company')
+console.log(elems)

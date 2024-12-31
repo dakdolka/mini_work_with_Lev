@@ -93,6 +93,7 @@
 fieldset {
     margin: 5px 10px;
     width: 20vw; 
+    height: 4.5vh;
     border: 5px solid rgb(100, 100, 255); 
     border-radius: 5px;
     cursor: default;
